@@ -1,5 +1,5 @@
 {
-    "name": "phpspec/php-diff",
+    "name": "actinarium/php-diff",
     "type": "library",
     "description": "A comprehensive library for generating differences between two hashable objects (strings or arrays).",
     "license": "BSD-3-Clause",
@@ -8,12 +8,17 @@
         {
             "name": "Chris Boulton",
             "homepage": "http://github.com/chrisboulton"
+        },
+        {
+            "name"  : "Actine",
+            "email" : "actine@actinarium.com",
+            "role"  : "Contributor"
         }
     ],
 
     "autoload": {
-        "psr-0": {
-            "Diff": "lib/"
+        "psr-4": {
+            "Diff\\": "./lib/Diff/"
         }
     }
 }
