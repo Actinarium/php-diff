@@ -83,9 +83,9 @@ class Diff_Renderer_Html_SideBySide extends Diff_Renderer_Html_Array
 						$toLine = $change['changed']['offset'] + $no + 1;
 						$html .= '<tr>';
 						$html .= '<th>'.$fromLine.'</th>';
-						$html .= '<td class="Left"><span>'.$line.'</span>&nbsp;</span></td>';
+						$html .= '<td class="Left"><span>'.$line.'</span></td>';
 						$html .= '<th>'.$toLine.'</th>';
-						$html .= '<td class="Right"><span>'.$line.'</span>&nbsp;</span></td>';
+						$html .= '<td class="Right"><span>'.$line.'</span></td>';
 						$html .= '</tr>';
 					}
 				}
@@ -95,9 +95,9 @@ class Diff_Renderer_Html_SideBySide extends Diff_Renderer_Html_Array
 						$toLine = $change['changed']['offset'] + $no + 1;
 						$html .= '<tr>';
 						$html .= '<th>&nbsp;</th>';
-						$html .= '<td class="Left">&nbsp;</td>';
+						$html .= '<td class="Left"></td>';
 						$html .= '<th>'.$toLine.'</th>';
-						$html .= '<td class="Right"><ins>'.$line.'</ins>&nbsp;</td>';
+						$html .= '<td class="Right"><ins>'.$line.'</ins></td>';
 						$html .= '</tr>';
 					}
 				}
@@ -107,9 +107,9 @@ class Diff_Renderer_Html_SideBySide extends Diff_Renderer_Html_Array
 						$fromLine = $change['base']['offset'] + $no + 1;
 						$html .= '<tr>';
 						$html .= '<th>'.$fromLine.'</th>';
-						$html .= '<td class="Left"><del>'.$line.'</del>&nbsp;</td>';
+						$html .= '<td class="Left"><del>'.$line.'</del></td>';
 						$html .= '<th>&nbsp;</th>';
-						$html .= '<td class="Right">&nbsp;</td>';
+						$html .= '<td class="Right"></td>';
 						$html .= '</tr>';
 					}
 				}
@@ -120,12 +120,11 @@ class Diff_Renderer_Html_SideBySide extends Diff_Renderer_Html_Array
 							$fromLine = $change['base']['offset'] + $no + 1;
 							$html .= '<tr>';
 							$html .= '<th>'.$fromLine.'</th>';
-							$html .= '<td class="Left"><span>'.$line.'</span>&nbsp;</td>';
+							$html .= '<td class="Left"><span>'.$line.'</span></td>';
 							if(!isset($change['changed']['lines'][$no])) {
 								$toLine = '&nbsp;';
 								$changedLine = '&nbsp;';
-							}
-							else {
+							} else {
 								$toLine = $change['base']['offset'] + $no + 1;
 								$changedLine = '<span>'.$change['changed']['lines'][$no].'</span>';
 							}
@@ -139,14 +138,13 @@ class Diff_Renderer_Html_SideBySide extends Diff_Renderer_Html_Array
 							if(!isset($change['base']['lines'][$no])) {
 								$fromLine = '&nbsp;';
 								$line = '&nbsp;';
-							}
-							else {
+							} else {
 								$fromLine = $change['base']['offset'] + $no + 1;
 								$line = '<span>'.$change['base']['lines'][$no].'</span>';
 							}
 							$html .= '<tr>';
 							$html .= '<th>'.$fromLine.'</th>';
-							$html .= '<td class="Left"><span>'.$line.'</span>&nbsp;</td>';
+							$html .= '<td class="Left"><span>'.$line.'</span></td>';
 							$toLine = $change['changed']['offset'] + $no + 1;
 							$html .= '<th>'.$toLine.'</th>';
 							$html .= '<td class="Right">'.$changedLine.'</td>';
