@@ -1,24 +1,30 @@
 {
     "name": "actinarium/php-diff",
-    "type": "library",
-    "description": "A comprehensive library for generating differences between two hashable objects (strings or arrays).",
+    "description": "A revamp of popular php-diff library by Chris Boulton, based on difflib implementation in Python",
+    "keywords" : "diff",
     "license": "BSD-3-Clause",
 
     "authors": [
         {
             "name": "Chris Boulton",
+            "role" : "Original developer",
             "homepage": "http://github.com/chrisboulton"
+        },
+        {
+            "name": "phpspec",
+            "role" : "Took care of the abandoned lib",
+            "homepage": "https://github.com/phpspec"
         },
         {
             "name"  : "Actine",
             "email" : "actine@actinarium.com",
-            "role"  : "Contributor"
+            "role"  : "Developer"
         }
     ],
 
     "autoload": {
         "psr-4": {
-            "Diff\\": "./lib/Diff/"
+            "Actinarium\\Diff\\": "./lib/Diff/"
         }
     }
 }
