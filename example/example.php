@@ -11,8 +11,14 @@
 		<hr />
 		<?php
 
+        require_once dirname(__FILE__) . '/../vendor/autoload.php';
+
 		// Include the diff class
-		require_once dirname(__FILE__).'/../lib/Diff.php';
+        use Actinarium\Diff\Diff;
+        use Actinarium\Diff\Renderer\Html\InlineRenderer;
+        use Actinarium\Diff\Renderer\Html\SideBySideRenderer;
+        use Actinarium\Diff\Renderer\Text\ContextRenderer;
+        use Actinarium\Diff\Renderer\Text\UnifiedRenderer;
 
 		// Include two sample files for comparison
 		$a = explode("\n", file_get_contents(dirname(__FILE__).'/a.txt'));
@@ -32,8 +38,7 @@
 		<?php
 
 		// Generate a side by side diff
-		require_once dirname(__FILE__).'/../lib/Diff/Renderer/Html/SideBySide.php';
-		$renderer = new Diff_Renderer_Html_SideBySide;
+		$renderer = new SideBySideRenderer();
 		echo $diff->Render($renderer);
 
 		?>
@@ -41,8 +46,7 @@
 		<?php
 
 		// Generate an inline diff
-		require_once dirname(__FILE__).'/../lib/Diff/Renderer/Html/Inline.php';
-		$renderer = new Diff_Renderer_Html_Inline;
+		$renderer = new InlineRenderer;
 		echo $diff->render($renderer);
 
 		?>
@@ -50,8 +54,7 @@
 		<pre><?php
 
 		// Generate a unified diff
-		require_once dirname(__FILE__).'/../lib/Diff/Renderer/Text/Unified.php';
-		$renderer = new Diff_Renderer_Text_Unified;
+		$renderer = new UnifiedRenderer;
 		echo htmlspecialchars($diff->render($renderer));
 
 		?>
@@ -60,8 +63,7 @@
 		<pre><?php
 
 		// Generate a context diff
-		require_once dirname(__FILE__).'/../lib/Diff/Renderer/Text/Context.php';
-		$renderer = new Diff_Renderer_Text_Context;
+		$renderer = new ContextRenderer;
 		echo htmlspecialchars($diff->render($renderer));
 		?>
 		</pre>

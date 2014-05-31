@@ -1,4 +1,5 @@
 <?php
+namespace Actinarium\Diff\Renderer;
 /**
  * Abstract class for diff renderers in PHP DiffLib.
  *
@@ -40,7 +41,7 @@
  * @link http://github.com/chrisboulton/php-diff
  */
 
-abstract class Diff_Renderer_Abstract
+abstract class AbstractRenderer
 {
 	/**
 	 * @var object Instance of the diff class that this renderer is generating the rendered diff for.
@@ -79,4 +80,9 @@ abstract class Diff_Renderer_Abstract
 	{
 		$this->options = array_merge($this->defaultOptions, $options);
 	}
+
+    /**
+     * @return string
+     */
+    abstract public function render();
 }

@@ -1,7 +1,7 @@
 {
     "name": "actinarium/php-diff",
     "description": "A revamp of popular php-diff library by Chris Boulton, based on difflib implementation in Python",
-    "keywords" : "diff",
+    "keywords" : ["diff"],
     "license": "BSD-3-Clause",
 
     "authors": [
@@ -24,7 +24,7 @@
 
     "autoload": {
         "psr-4": {
-            "Diff\\": "./lib/Diff/"
+            "Actinarium\\Diff\\": "./lib/Diff/"
         }
     }
 }

@@ -1,4 +1,7 @@
 <?php
+namespace Actinarium\Diff\Renderer\Text;
+use Actinarium\Diff\Renderer\AbstractRenderer;
+
 /**
  * Unified diff generator for PHP DiffLib.
  *
@@ -40,9 +43,7 @@
  * @link http://github.com/chrisboulton/php-diff
  */
 
-require_once dirname(__FILE__).'/../Abstract.php';
-
-class Diff_Renderer_Text_Unified extends Diff_Renderer_Abstract
+class UnifiedRenderer extends AbstractRenderer
 {
 	/**
 	 * Render and return a unified diff.

@@ -1,6 +1,8 @@
 <?php
+namespace Actinarium\Diff;
+
 /**
- * Sequence matcher for Diff
+ * Sequence matcher for Actinarium\Diff\Diff
  *
  * PHP version 5
  *
@@ -32,7 +34,7 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  *
- * @package Diff
+ * @package Actinarium\Diff\Diff
  * @author Chris Boulton <chris.boulton@interspire.com>
  * @copyright (c) 2009 Chris Boulton
  * @license New BSD License http://www.opensource.org/licenses/bsd-license.php
@@ -40,7 +42,7 @@
  * @link http://github.com/chrisboulton/php-diff
  */
 
-class Diff_SequenceMatcher
+class SequenceMatcher
 {
 	/**
 	 * @var string|array Either a string or an array containing a callback function to determine if a line is "junk" or not.
